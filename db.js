@@ -1,19 +1,19 @@
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT || 3306
+    host: 'sql300.infinityfree.com',
+    user: 'if0_40546674',
+    password: 'Espece9imbecile',
+    database: 'if0_40546674_nyouskoldata',
+    port: 3306
 });
 
-connection.connect(err => {
-  if (err) {
-    console.error('Erreur connexion MySQL:', err);
-  } else {
-    console.log('Connecté à MySQL ✅');
-  }
+connection.connect((err) => {
+    if (err) {
+        console.error('Erreur connexion MySQL:', err);
+    } else {
+        console.log('Connexion MySQL réussie !');
+    }
 });
 
 module.exports = connection;
