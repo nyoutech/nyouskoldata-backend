@@ -1,19 +1,20 @@
 const mysql = require('mysql');
 
-const connection = mysql.createConnection({
-    host: 'sql300.infinityfree.com',
-    user: 'if0_40546674',
-    password: 'Espece9imbecile',
-    database: 'if0_40546674_nyouskoldata',
-    port: 3306
+const db = mysql.createConnection({
+    host: "mysql.railway.internal",
+    port: 3306,
+    user: "root",
+    password: "AoptDbrJpOHOknhAMbMqtEBgFdhFrYho",
+    database: "railway"
 });
 
-connection.connect((err) => {
+// Connexion
+db.connect((err) => {
     if (err) {
-        console.error('Erreur connexion MySQL:', err);
-    } else {
-        console.log('Connexion MySQL réussie !');
+        console.error("❌ Erreur connexion MySQL:", err);
+        return;
     }
+    console.log("✅ Connecté à MySQL Railway !");
 });
 
-module.exports = connection;
+module.exports = db;
